@@ -1,0 +1,15 @@
+version: '3'
+services:
+    web:
+        build: .
+        ports:
+            -   "5001:8080"
+    db: 
+        image: "mysql"
+        environment: 
+            MYSQL_ROOT_PASSWORD: password
+        volumes:
+            - app-data:/foo
+    
+volumes:
+    app-data:
